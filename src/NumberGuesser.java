@@ -38,7 +38,7 @@ public class NumberGuesser extends JFrame implements ActionListener {
         panel.setLayout(new GridLayout(2,6));
         getContentPane().add(panel, BorderLayout.CENTER);
 
-        //creating the 16 buttons
+        //creating the 12 buttons
         for(int i = 0; i<12; i++){
             JButton button = new JButton(labels[i]);
             button.setBackground(Color.decode("#FFFF99"));

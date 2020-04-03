@@ -9,10 +9,21 @@ public class Calculator extends JFrame implements ActionListener {
     //10 digits, C, =, /, *, -, +,
 
     //initialise display
-    JLabel display = new JLabel("Display");
+    JLabel display = new JLabel("");
+
+    //Set defaults for stored variables
+    String operator;
+    int firstNumber = 0;
+    int secondNumber = 0;
 
     //constructor of the calculator
     public Calculator(){
+        //set some graphical fluff
+        this.setTitle("Calculator");
+        display.setPreferredSize(new Dimension(400, 30));
+        display.setFont(new Font("Arial", Font.PLAIN, 25));
+        display.setForeground(Color.decode("#00CC00"));
+
         //setting the labels of our buttons
         String[] labels =
                 {
@@ -32,6 +43,7 @@ public class Calculator extends JFrame implements ActionListener {
         //creating the 16 buttons
         for(int i = 0; i<16; i++){
             JButton button = new JButton(labels[i]);
+            button.setBackground(Color.decode("#FFFF99"));
             panel.add(button);
             button.addActionListener(this);
         }
@@ -49,8 +61,60 @@ public class Calculator extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //the text on the clicked button is printed
+        //store the text of the currentButton to currentButton
         String currentButton = e.getActionCommand();
-        System.out.println(currentButton);
+
+        //add some functionality to the buttons with switch statements
+        switch(currentButton){
+            //a number was pressed
+            case "0": case "1": case "2": case "3": case "4":
+            case "5": case "6": case "7": case "8": case "9":
+                display.setText(display.getText() + currentButton);
+                break;
+            //an operator was pressed
+            case "/": case "*": case "+": case "-":
+                //store the operator and the first number
+                operator = currentButton;
+                firstNumber = Integer.parseInt(display.getText());
+                //clear the display
+                display.setText("");
+                break;
+
+            //C or reset was pressed
+            case "C":
+                //set all stored variables to 0/empty
+                firstNumber=secondNumber=0;
+                display.setText("");
+                break;
+
+            //calculator state: the = was pressed
+            case "=":
+                secondNumber = Integer.parseInt(display.getText());
+                int result = 0;
+
+                //now do the calculation dependent on the stored operator
+                switch (operator){
+                    case "+":
+                        result = firstNumber + secondNumber;
+                        break;
+                    case "-":
+                        result = firstNumber - secondNumber;
+                        break;
+                    case "*":
+                        result = firstNumber * secondNumber;
+                        break;
+                    case "/":
+                        result = firstNumber / secondNumber;
+                        break;
+                    default:
+                        System.out.println("System Error: somehow entered an unexpected operator");
+                }
+                //display the newly calculated result
+                display.setText(result + "");
+                break;
+
+            default:
+                System.out.println("System Error: unexpected input");
+        }
     }
 }

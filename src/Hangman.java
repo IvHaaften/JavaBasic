@@ -51,13 +51,44 @@ public class Hangman extends JFrame implements ActionListener {
         wordDisplay.setText(displayWord.toString());
 
         //graphical construction
-
         this.setTitle("Hangman");
-        wordDisplay.setFont(new Font("Arial", Font.PLAIN, 30));
 
+        //set the word display
+        wordDisplay.setFont(new Font("Arial", Font.PLAIN, 30));
+        wordDisplay.setOpaque(true);
+        wordDisplay.setBackground(Color.decode("#FFFFFF"));
+        wordDisplay.setHorizontalAlignment(JLabel.CENTER);
+
+        //live display
+        liveDisplay.setFont(new Font("Arial", Font.PLAIN, 15));
+        liveDisplay.setOpaque(true);
+        liveDisplay.setBackground(Color.decode("#FFFFFF"));
+        liveDisplay.setHorizontalAlignment(JLabel.CENTER);
+
+        //text input
+        textField.setHorizontalAlignment(JTextField.CENTER);
+        textField.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        //letter display
+        guessedLetterDisplay.setFont(new Font("Arial", Font.PLAIN, 15));
+        guessedLetterDisplay.setOpaque(true);
+        guessedLetterDisplay.setBackground(Color.decode("#FFFFFF"));
+        guessedLetterDisplay.setHorizontalAlignment(JLabel.CENTER);
+
+        //word display
+        guessedWordDisplay.setFont(new Font("Arial", Font.PLAIN, 15));
+        guessedWordDisplay.setOpaque(true);
+        guessedWordDisplay.setBackground(Color.decode("#FFFFFF"));
+        guessedWordDisplay.setHorizontalAlignment(JLabel.CENTER);
+
+        //button
+        resetButton.setFont(new Font("Arial", Font.PLAIN, 15));
+        resetButton.setForeground(Color.decode("#FFFFFF"));
+        resetButton.setBackground(Color.decode("#FF0000"));
 
         //set the two panels
         leftPanel.setLayout(new GridLayout(3,1));
+        leftPanel.setPreferredSize(new Dimension(450, 300));
         getContentPane().add(leftPanel, BorderLayout.CENTER);
         leftPanel.add(wordDisplay);
         leftPanel.add(liveDisplay);
@@ -65,6 +96,7 @@ public class Hangman extends JFrame implements ActionListener {
         textField.addActionListener(this);
 
         rightPanel.setLayout(new GridLayout(3,1));
+        rightPanel.setPreferredSize(new Dimension(150, 300));
         getContentPane().add(rightPanel, BorderLayout.EAST);
         rightPanel.add(guessedWordDisplay);
         rightPanel.add(guessedLetterDisplay);
@@ -100,7 +132,7 @@ public class Hangman extends JFrame implements ActionListener {
     public static void main(String[] args) {
         //Call the game function
         Hangman hangman = new Hangman();
-        hangman.setSize(800, 400);
+        hangman.setSize(600, 300);
 
         //make visible as a last step, after al graphics are created
         hangman.setVisible(true);
@@ -137,22 +169,24 @@ public class Hangman extends JFrame implements ActionListener {
 
                 } else {
                     //no match in the word
-                    currentLives = currentLives-1;
-                    if (currentLives<1){
-                        lost = true;
-                        liveDisplay.setText("Out of lives. Please hit reset to play again.");
-                    } else {
-                        liveDisplay.setText("Incorrect. You have "+ currentLives + " lives remaining.");
+                    //only lose a life if the letter has not been entered before
+                    if(!guessedLetters.contains(currentInput)){
+                        currentLives = currentLives-1;
+                        if (currentLives<1){
+                            lost = true;
+                            liveDisplay.setText("Out of lives. Please hit reset to play again.");
+                        } else {
+                            liveDisplay.setText("Incorrect. You have "+ currentLives + " lives remaining.");
 
-                        guessedLetters.add(currentInput);
+                            guessedLetters.add(currentInput);
 
-                        StringBuilder letterDisplay = new StringBuilder();
+                            StringBuilder letterDisplay = new StringBuilder();
 
-                        for (String guessedLetter : guessedLetters) {
-                            letterDisplay.append(guessedLetter).append(", ");
+                            for (String guessedLetter : guessedLetters) {
+                                letterDisplay.append(guessedLetter).append(", ");
+                            }
+                            guessedLetterDisplay.setText(letterDisplay + "");
                         }
-
-                        guessedLetterDisplay.setText(letterDisplay + "");
                     }
                 }
 

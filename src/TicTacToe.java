@@ -150,7 +150,7 @@ public class TicTacToe extends JFrame implements ActionListener {
         }
         first = ((JButton) panel.getComponents()[2]).getText();
         //the fourth button is still saved from the past diagonal
-        third = ((JButton) panel.getComponents()[8]).getText();
+        third = ((JButton) panel.getComponents()[6]).getText();
         if (first.equals(second) && first.equals(third) && !first.equals("-")){
             win = true;
         }

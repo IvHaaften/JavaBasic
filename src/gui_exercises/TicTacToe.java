@@ -1,3 +1,5 @@
+package gui_exercises;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -57,7 +59,7 @@ public class TicTacToe extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        //Call the NumberGuesser function, create a 400x400 calculator
+        //Call the gui_exercises.NumberGuesser function, create a 400x400 calculator
         TicTacToe ticTacToe = new TicTacToe();
         ticTacToe.setSize(300, 325);
 

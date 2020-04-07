@@ -1,3 +1,5 @@
+package basic_exercises;
+
 public class Exercise16 {
     public static void main(String[] args) {
         //goal:

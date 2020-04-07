@@ -1,3 +1,5 @@
+package gui_exercises;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +19,7 @@ public class NumberGuesser extends JFrame implements ActionListener {
     JLabel display = new JLabel("Guess a number (0 - "+ bound + ")");
 
 
-    //constructor for the NumberGuesser
+    //constructor for the gui_exercises.NumberGuesser
     public NumberGuesser(){
         //set some graphical fluff
         this.setTitle("Number guessing game");
@@ -48,7 +50,7 @@ public class NumberGuesser extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        //Call the NumberGuesser function, create a 400x400 calculator
+        //Call the gui_exercises.NumberGuesser function, create a 400x400 calculator
         NumberGuesser guess = new NumberGuesser();
         guess.setSize(600, 300);
 

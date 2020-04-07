@@ -1,3 +1,4 @@
+package basic_exercises;
 
 import java.util.Scanner;
 

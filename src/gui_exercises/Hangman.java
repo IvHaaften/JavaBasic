@@ -1,3 +1,5 @@
+package gui_exercises;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -51,7 +53,7 @@ public class Hangman extends JFrame implements ActionListener {
         wordDisplay.setText(displayWord.toString());
 
         //graphical construction
-        this.setTitle("Hangman");
+        this.setTitle("gui_exercises.Hangman");
 
         //set the word display
         wordDisplay.setFont(new Font("Arial", Font.PLAIN, 30));

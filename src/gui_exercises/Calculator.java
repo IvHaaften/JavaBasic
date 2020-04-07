@@ -1,3 +1,5 @@
+package gui_exercises;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,7 +21,7 @@ public class Calculator extends JFrame implements ActionListener {
     //constructor of the calculator
     public Calculator(){
         //set some graphical fluff
-        this.setTitle("Calculator");
+        this.setTitle("gui_exercises.Calculator");
         display.setPreferredSize(new Dimension(400, 30));
         display.setFont(new Font("Arial", Font.PLAIN, 25));
         display.setForeground(Color.decode("#00CC00"));

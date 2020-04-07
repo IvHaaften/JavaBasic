@@ -2,15 +2,19 @@ package oo_exercises.draw;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Draw extends JFrame implements MouseListener {
+public class Draw extends JFrame implements MouseListener, ActionListener {
 
     List<Figure> figures = new ArrayList<>();
     Figure figure;
+    String[] shapes = {"oval", "rectangle", "line"};
+    String shape = "oval"; //the shape to be drawn
 
     @Override
     public void paint(Graphics g) {
@@ -21,7 +25,12 @@ public class Draw extends JFrame implements MouseListener {
     }
 
     public Draw() throws HeadlessException{
+        this.getContentPane().setBackground(Color.decode("#FFFFFF"));
         this.addMouseListener(this);
+
+        JToolBar toolBar = new JToolBar("Toolbar");
+        addButtons(toolBar);
+        add(toolBar, BorderLayout.PAGE_START);
     }
 
     public static void main(String[] args) {
@@ -33,17 +42,20 @@ public class Draw extends JFrame implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        switch (e.getButton()){
-            case 1:
+        switch (shape){
+            case "oval":
                 //left mouse button
-                figure = new Rectangle();
-                break;
-            case 3:
-                //right mouse button
                 figure = new Oval();
                 break;
-
-        }
+            case "rectangle":
+                //right mouse button
+                figure = new Rectangle();
+                break;
+            case "line":
+                //button 4
+                figure = new Line();
+                break;
+            }
 
         figure.x1 = e.getX();
         figure.y1 = e.getY();
@@ -70,6 +82,38 @@ public class Draw extends JFrame implements MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
+
+    }
+
+    protected void addButtons(JToolBar toolBar) {
+
+
+        for(String shapes : shapes){
+            JButton button = new JButton(shapes);
+            button.setActionCommand(shapes);
+            button.setToolTipText("draws an "+ shapes + " on click");
+            button.addActionListener(this);
+            toolBar.add(button);
+        }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String cmd = e.getActionCommand();
+
+        switch (cmd){
+            case "oval":
+                shape = "oval";
+                break;
+            case "rectangle":
+                shape = "rectangle";
+                break;
+            case "line":
+                shape = "line";
+                break;
+            default:
+                System.out.println("test default");
+        }
 
     }
 }

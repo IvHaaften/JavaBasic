@@ -3,8 +3,8 @@ package oo_exercises.car;
 public class Truck extends Car {
     private int capacity;
 
-    public Truck(String brand, String color) {
-        super(brand, color);
+    public Truck(String brand, String color, int motor) {
+        super(brand, color, motor);
     }
 
     public int getCapacity() {

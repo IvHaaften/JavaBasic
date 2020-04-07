@@ -3,8 +3,8 @@ package oo_exercises.car;
 public class RaceCar extends Car {
     int topSpeed;
 
-    public RaceCar(String brand, String color) {
-        super(brand, color);
+    public RaceCar(String brand, String color, int motor) {
+        super(brand, color, motor);
     }
 
     public int getTopSpeed() {

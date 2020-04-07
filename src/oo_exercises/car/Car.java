@@ -3,6 +3,7 @@ package oo_exercises.car;
 public class Car implements Vehicle{
     private String brand;
     private String color;
+    private Propulsion motor;
     protected int speed;
 
     @Override
@@ -11,14 +12,17 @@ public class Car implements Vehicle{
     } //sets the print method
 
     public void drive() {
-        speed += 10;
+        //modulated by motor power
+        speed += 2  * motor.speedIncrease;
     }
     public void brake() {
+        //not modulated by motor, but by brakes
         speed -= 10;
     }
 
-    public Car(String brand, String color) {
+    public Car(String brand, String color, int motor) {
         this.brand = brand;
         this.color = color;
+        this.motor = new Propulsion(motor);
     }
 }

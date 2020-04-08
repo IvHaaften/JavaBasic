@@ -48,18 +48,15 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
     public void mousePressed(MouseEvent e) {
         switch (shape){
             case "oval":
-                //left mouse button
                 figure = new Oval();
                 break;
             case "triangle":
                 figure = new Triangle();
                 break;
             case "rectangle":
-                //right mouse button
                 figure = new Rectangle();
                 break;
             case "line":
-                //button 4
                 figure = new Line();
                 break;
             }

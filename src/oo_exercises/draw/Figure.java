@@ -1,11 +1,16 @@
 package oo_exercises.draw;
-import java.awt.Graphics;
+import java.awt.*;
+import java.io.Serializable;
 
-public abstract class Figure {
+public abstract class Figure implements Serializable {
     protected int x1, y1, x2, y2,
         xLow, yLow, height, width;
+    protected Color color;
+    protected boolean filled;
 
     public void draw(Graphics g){
+        g.setColor(color);
+
         if(x1<=x2) {
             xLow = x1;
             width= x2-x1;

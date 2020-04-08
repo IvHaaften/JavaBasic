@@ -7,7 +7,11 @@ public class Rectangle extends Figure {
     @Override
     public void draw(Graphics g){
         super.draw(g);
-        g.drawRect(xLow, yLow, width, height);
+        if(filled){
+            g.fillRect(xLow, yLow, width, height);
+        }else{
+            g.drawRect(xLow, yLow, width, height);
+        }
     }
 
 }

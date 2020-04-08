@@ -7,7 +7,11 @@ public class Oval extends Figure{
     @Override
     public void draw(Graphics g){
         super.draw(g);
-        g.drawOval(xLow, yLow, width, height);
+        if(filled){
+            g.fillOval(xLow, yLow, width, height);
+        }else{
+            g.drawOval(xLow, yLow, width, height);
+        }
 
     }
 

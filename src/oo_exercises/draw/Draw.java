@@ -14,8 +14,8 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
 
     protected List<Figure> figures = new ArrayList<>();
     protected Figure figure;
-    private String[] buttonActions = {"save", "open","oval", "rectangle", "line", "filled" ,"color", "empty"};
-    private String[] labels = {"\uD83D\uDD0F","\uD83D\uDCC1","○", "□", "━","\t✿", "\uD83C\uDFA8","♻"};
+    private String[] buttonActions = {"save", "open","oval", "rectangle","triangle", "line", "filled" ,"color", "empty"};
+    private String[] labels = {"\uD83D\uDD0F","\uD83D\uDCC1","○", "□","◢","━","\t✿", "\uD83C\uDFA8","♻"};
     protected String shape = "oval"; //the shape to be drawn
     protected Color newColor=Color.BLACK;
     protected boolean filled = false;
@@ -50,6 +50,9 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
             case "oval":
                 //left mouse button
                 figure = new Oval();
+                break;
+            case "triangle":
+                figure = new Triangle();
                 break;
             case "rectangle":
                 //right mouse button
@@ -150,6 +153,9 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
                 break;
             case "rectangle":
                 shape = "rectangle";
+                break;
+            case "triangle":
+                shape = "triangle";
                 break;
             case "line":
                 shape = "line";

@@ -5,8 +5,9 @@ import java.awt.Graphics;
 public class Oval extends Figure{
 
     @Override
-    public void draw(Graphics g){
-        super.draw(g);
+    public void drawFigure(Graphics g){
+        super.drawFigure(g);
+
         if(filled){
             g.fillOval(xLow, yLow, width, height);
         }else{

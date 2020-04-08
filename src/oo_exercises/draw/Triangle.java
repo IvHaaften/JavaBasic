@@ -6,15 +6,14 @@ public class Triangle extends Figure {
     int x3, y3;
 
     @Override
-    public void draw(Graphics g) {
-        super.draw(g);
-
+    public void drawFigure(Graphics g) {
+        super.drawFigure(g);
 
         if((y1==yLow && x1==xLow)||(y2==yLow && x2==xLow)){
-            //	◣
+            //	◣ triangle
             x3 = xLow;
         } else {
-            //◢
+            //◢ triangle
             x3 = xLow+width;
         }
 

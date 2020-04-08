@@ -12,10 +12,15 @@ import java.util.List;
 
 public class Draw extends JFrame implements MouseListener, ActionListener {
 
+    //figure storage
     protected List<Figure> figures = new ArrayList<>();
     protected Figure figure;
+
+    //button variables
     private String[] buttonActions = {"save", "open","oval", "rectangle","triangle", "line", "filled" ,"color", "empty"};
     private String[] labels = {"\uD83D\uDD0F","\uD83D\uDCC1","○", "□","◢","━","\t✿", "\uD83C\uDFA8","♻"};
+
+    //default settings
     protected String shape = "oval"; //the shape to be drawn
     protected Color newColor=Color.BLACK;
     protected boolean filled = false;
@@ -23,12 +28,15 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
+
+        //draw each of the stored figures
         for (Figure f : figures){
-            f.draw(g);
+            f.drawFigure(g);
         }
     }
 
     public Draw() throws HeadlessException{
+        //Generates the content pane & paints it in.
         this.getContentPane().setBackground(Color.decode("#FFFFFF"));
         this.addMouseListener(this);
 
@@ -38,6 +46,7 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
     }
 
     public static void main(String[] args) {
+        //call the drawing program
         Draw draw = new Draw();
         draw.setSize(500, 500);
         draw.setVisible(true);
@@ -60,6 +69,7 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
                 figure = new Line();
                 break;
             }
+
         figure.color = newColor;
         figure.filled =filled;
 
@@ -73,21 +83,6 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
         figure.y2 = e.getY();
         figures.add(figure);
         repaint();
-
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
 
     }
 
@@ -114,7 +109,7 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
             case "save":
                 try {
                     // create a new file with an ObjectOutputStream
-                    FileOutputStream out = new FileOutputStream("savedDraw");
+                    FileOutputStream out = new FileOutputStream("savedDraw.Draw");
                     ObjectOutputStream oout = new ObjectOutputStream(out);
 
                     // write something in the file
@@ -127,7 +122,7 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
             case "open":
                 try {
                     // create an ObjectInputStream for the file
-                    ObjectInputStream ois = new ObjectInputStream(new FileInputStream("savedDraw."));
+                    ObjectInputStream ois = new ObjectInputStream(new FileInputStream("savedDraw.Draw"));
                     ArrayList<Figure> loadFig = (ArrayList<Figure>)ois.readObject();
 
                     // read and print an object and cast it as string
@@ -175,4 +170,21 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
         }
 
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
 }
+

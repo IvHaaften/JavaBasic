@@ -8,9 +8,12 @@ public abstract class Figure implements Serializable {
     protected Color color;
     protected boolean filled;
 
-    public void draw(Graphics g){
+    public void drawFigure(Graphics g){
+
+        //set color to the figures' color
         g.setColor(color);
 
+        //pre-processing of coordinates for drawing, inherited by the different shapes
         if(x1<=x2) {
             xLow = x1;
             width= x2-x1;

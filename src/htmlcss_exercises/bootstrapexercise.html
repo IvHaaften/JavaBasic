@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .jumbotron{
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d3/Bicyclette_clement.jpg);
+            background-size: 30%;
+            background-position: right center;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <title>Bootstrap Example</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">The Bikeshop</a>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginmodal">
+          Login
+        </button>
+    </nav>
+
+    <!--Jumbotron ft.-->
+    <div class="jumbotron">
+        <div style="margin-right: 30%;">
+        <h1 class="display-4">The Bikeshop</h1>
+        <p class="lead"><strong>The</strong> fictional bikeshop for all your example following needs</p>
+        <hr class="my-4">
+        <p>We have many imaginary listings for imaginary bikes from our imaginary workshop in an imaginary place listed for sale. 
+            Our company is know for it's amazing service, fast delivery and good after-market support. All imaginary bikes were 
+        hand imagined by only the very best of bike imaginers.</p>
+    </div>
+    </div>
+      
+  
+  <!-- Modal -->
+  <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginmodalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginmodalLabel">Login window</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="usernameinput">Username</label>
+                  <input type="text" class="form-control" id="usernameinput" aria-describedby="usernamehelp">
+                  <small id="usernamehelp" class="form-text text-muted">This does nothing, this is an example site</small>
+                </div>
+                <div class="form-group">
+                  <label for="passwordinput">Password</label>
+                  <input type="password" class="form-control" id="passwordinput" aria-describedby="passwordhelp">
+                  <small id="passwordhelp" class="form-text text-muted">Please enter the imaginary password linked to your account</small>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-tandem-tab" data-toggle="tab" href="#nav-tandem" role="tab" aria-controls="nav-tandem" aria-selected="true">Tandem</a>
+      <a class="nav-item nav-link" id="nav-monowheel-tab" data-toggle="tab" href="#nav-monowheel" role="tab" aria-controls="nav-monowheel" aria-selected="false">Monowheel</a>
+      <a class="nav-item nav-link" id="nav-pennyfarthing-tab" data-toggle="tab" href="#nav-pennyfarthing" role="tab" aria-controls="nav-pennyfarthing" aria-selected="false">Penny-Farthing</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-tandem" role="tabpanel" aria-labelledby="nav-tandem-tab">
+        <div class="card-deck">
+            <div class="card">
+              
+              <div class="card-body">
+                <h5 class="card-title">Bike1</h5>
+                <p class="card-text">Tandems are multi-person bikes</p>
+                <p class="card-text"><small class="text-muted">By George H. Van Norman, Springfield, Mass.CREATED/PUBLISHED: c1898. - 
+                    This image is available from the United States Library of Congress's Prints and Photographs divisionunder the digital 
+                    ID cph.3b39889.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. 
+                    See Commons:Licensing for more information., Public Domain, https://commons.wikimedia.org/w/index.php?curid=369563</small></p>
+              </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Bike_for_four.jpg/1280px-Bike_for_four.jpg" 
+              class="card-img-top" alt="George H. Van Norman, Springfield, Mass. CREATED/PUBLISHED: c1898">
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bike2</h5>
+                <p class="card-text">Tandems are multi-person bikes</p>
+                <p class="card-text"><small class="text-muted">By George H. Van Norman, Springfield, Mass.CREATED/PUBLISHED: c1898. - 
+                    This image is available from the United States Library of Congress's Prints and Photographs divisionunder the digital 
+                    ID cph.3b39889.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. 
+                    See Commons:Licensing for more information., Public Domain, https://commons.wikimedia.org/w/index.php?curid=369563</small></p>
+              </div>              
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Bike_for_four.jpg/1280px-Bike_for_four.jpg" 
+              class="card-img-top" alt="George H. Van Norman, Springfield, Mass. CREATED/PUBLISHED: c1898">
+
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bike3</h5>
+                <p class="card-text">Tandems are multi-person bikes</p>
+                <p class="card-text"><small class="text-muted">By George H. Van Norman, Springfield, Mass.CREATED/PUBLISHED: c1898. - 
+                    This image is available from the United States Library of Congress's Prints and Photographs divisionunder the digital 
+                    ID cph.3b39889.This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. 
+                    See Commons:Licensing for more information., Public Domain, https://commons.wikimedia.org/w/index.php?curid=369563</small></p>
+              </div>              
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Bike_for_four.jpg/1280px-Bike_for_four.jpg" 
+              class="card-img-top" alt="George H. Van Norman, Springfield, Mass. CREATED/PUBLISHED: c1898">
+
+            </div>
+          </div>
+    </div>
+    <div class="tab-pane fade" id="nav-monowheel" role="tabpanel" aria-labelledby="nav-monowheel-tab">
+        <div class="card-deck">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bike 1</h5>
+                <p class="card-text">Hemming's Unicycle. The velocipede: its history, varieties, and practice, author J. T. Goddard, page 77 in chapter Hemming's Unicycle, or "Flying Yankee Velocipede". Extract from page 76: "Richard C. Hemming of New Haven, Conn., invented the machine herewith represented, two years ago; but has only recently brought it into the market and applied it to practical purposes." </p>
+              </div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Hemming%27s_Unicycle.jpg/800px-Hemming%27s_Unicycle.jpg" 
+              class="card-img-top" alt="public domain image of Hemming's Unicycle">
+              
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">Bike 2</h5>
+                <p class="card-text">Hemming's Unicycle. The velocipede: its history, varieties, and practice, author J. T. Goddard, page 77 in chapter Hemming's Unicycle, or "Flying Yankee Velocipede". Extract from page 76: "Richard C. Hemming of New Haven, Conn., invented the machine herewith represented, two years ago; but has only recently brought it into the market and applied it to practical purposes." </p>
+              </div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Hemming%27s_Unicycle.jpg/800px-Hemming%27s_Unicycle.jpg" 
+              class="card-img-top" alt="public domain image of Hemming's Unicycle">
+                
+            </div>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">Bike 3</h5>
+                <p class="card-text">Hemming's Unicycle. The velocipede: its history, varieties, and practice, author J. T. Goddard, page 77 in chapter Hemming's Unicycle, or "Flying Yankee Velocipede". Extract from page 76: "Richard C. Hemming of New Haven, Conn., invented the machine herewith represented, two years ago; but has only recently brought it into the market and applied it to practical purposes." </p>
+              </div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Hemming%27s_Unicycle.jpg/800px-Hemming%27s_Unicycle.jpg" 
+              class="card-img-top" alt="public domain image of Hemming's Unicycle">
+                
+            </div>
+          </div>
+    </div>
+    <div class="tab-pane fade" id="nav-pennyfarthing" role="tabpanel" aria-labelledby="nav-pennyfarthing-tab">
+        <div class="card-deck">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bike1</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna ante, porttitor vel feugiat vel, 
+                    viverra viverra nulla. Etiam facilisis congue massa nec dapibus. </p>
+                <p class="card-text"><small class="text-muted">Die Gartenlaube (1886) Public Domain</small></p>
+              </div>              
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Die_Gartenlaube_%281886%29_b_130_2.jpg" class="card-img-top" alt="A picture of a Penny-Farthing">
+
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bike2</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna ante, porttitor vel feugiat vel, 
+                    viverra viverra nulla.Etiam facilisis congue massa nec dapibus. </p>
+                <p class="card-text"><small class="text-muted">Die Gartenlaube (1886) Public Domain</small></p>
+              </div>              
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Die_Gartenlaube_%281886%29_b_130_2.jpg" class="card-img-top" alt="A picture of a Penny-Farthing">
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bike3</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna ante, porttitor vel feugiat vel, 
+                    viverra viverra nulla. Etiam facilisis congue massa nec dapibus. </p>
+                <p class="card-text"><small class="text-muted">Die Gartenlaube (1886) Public Domain</small></p>
+              </div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Die_Gartenlaube_%281886%29_b_130_2.jpg" 
+              class="card-img-top" alt="A picture of a Penny-Farthing">
+              
+            </div>
+          </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
